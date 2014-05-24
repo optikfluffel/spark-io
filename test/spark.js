@@ -562,13 +562,14 @@ exports["Spark.prototype.pinMode"] = {
   },
 
   pwmError: function(test) {
-    test.expect(12);
+    test.expect(11);
 
     try {
       this.spark.pinMode("D0", 3);
       this.spark.pinMode("D1", 3);
       this.spark.pinMode("A0", 3);
       this.spark.pinMode("A1", 3);
+      this.spark.pinMode("A4", 3);
       this.spark.pinMode("A5", 3);
 
 
@@ -634,13 +635,6 @@ exports["Spark.prototype.pinMode"] = {
     }
 
     try {
-      this.spark.pinMode("A4", 3);
-      test.ok(false);
-    } catch(e) {
-      test.ok(true);
-    }
-
-    try {
       this.spark.pinMode("A6", 3);
       test.ok(false);
     } catch(e) {
@@ -658,13 +652,14 @@ exports["Spark.prototype.pinMode"] = {
   },
 
   servoError: function(test) {
-    test.expect(12);
+    test.expect(11);
 
     try {
       this.spark.pinMode("D0", 4);
       this.spark.pinMode("D1", 4);
       this.spark.pinMode("A0", 4);
       this.spark.pinMode("A1", 4);
+      this.spark.pinMode("A4", 4);
       this.spark.pinMode("A5", 4);
 
       test.ok(true);
@@ -723,13 +718,6 @@ exports["Spark.prototype.pinMode"] = {
 
     try {
       this.spark.pinMode("A3", 4);
-      test.ok(false);
-    } catch(e) {
-      test.ok(true);
-    }
-
-    try {
-      this.spark.pinMode("A4", 4);
       test.ok(false);
     } catch(e) {
       test.ok(true);
